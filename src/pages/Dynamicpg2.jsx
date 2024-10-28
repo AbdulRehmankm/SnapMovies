@@ -5,6 +5,7 @@ import Navebar from "../ui_comp/Navebar";
 import Footer from "../ui_comp/Footer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 const Dynamicpg2 = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
