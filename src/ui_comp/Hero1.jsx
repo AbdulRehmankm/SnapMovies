@@ -12,7 +12,7 @@ const Hero1 = () => {
             <div>
                 <div className='grid grid-cols-1 sm:grid-cols-2'>
                     <div className=' flex flex-col justify-center gap-4  text-center sm:text-left order-2 sm:order-1 relative z-10'>
-                        <h1 className=' text-3xl sm:text-4xl lg:text-5xl font-bold'>MOVIES & SERIES</h1>
+                        <h1 className=' text-3xl sm:text-4xl lg:text-5xl font-bold'>MOVIES & SERIESS</h1>
                         <p className=' text-sm'>
                         Welcome to SnapMovies.pk
                         <br />
