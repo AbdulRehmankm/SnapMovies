@@ -14,6 +14,10 @@ const DynamicpgWebpage = ({ usedata, isLimited }) => {
 
     const fetchItems = useCallback(async () => {
         try {
+            if(loading == false)
+            {
+                setLoading(true);
+            }
             const response = await axios.get(`https://snapmovieserver.onrender.com/api/items/category/${usedata}`);
             const sortedItems = response.data.items.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
             setItems(sortedItems);
@@ -99,10 +103,18 @@ const DynamicpgWebpage = ({ usedata, isLimited }) => {
         setCurrentPage(1); // Reset to first page after sorting
     };
 
+    if (loading) return (
+        <div>
+          <div className="flex justify-center items-center h-[325px] text-lg font-semibold text-black mt-8">
+                Loading Item...
+              </div>   
+        </div>
+      );
+
     return (
         <div>
         
-        <div className="container mx-auto p-4 mt-10">
+        <div className="container mx-auto p-4 mt-2 sm:mt-4">
             {isLimited ? '' :
                 <div className=" grid grid-cols-1 grc xl:grid-cols-2 mb-4">
                     <div className='sm:flex mb-2'>
@@ -128,12 +140,12 @@ const DynamicpgWebpage = ({ usedata, isLimited }) => {
                 </div>
             }
 
-
+{/* 
 {loading ? (
             <div className="flex justify-center items-center h-[170px] text-lg font-semibold text-black">
             Loading Items...
           </div>          
-           ) : ('')} 
+           ) : ('')}  */}
 
             {/* Display Items */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
