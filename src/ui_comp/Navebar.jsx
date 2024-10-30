@@ -236,6 +236,7 @@ const Navebar = () => {
                 <li key={`menu-${data.id}`} className="sm:inline-block my-2 sm:my-0">
                   <Link to={`/dynpage/${data.name}`}
                     className="block px-4 py-2 sm:py-0 rounded-md hover:bg-clr4 hover:text-xl duration-200"
+                    onClick={() => {setMenuOpen(false); }}
                   >
                     {data.name}
                     </Link>
